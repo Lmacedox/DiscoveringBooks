@@ -1,2 +1,2 @@
-export { Layout } from "./Layout/layout";
-export { Header } from "./Search/search";
+export { Search } from "./Search/search";
+export { Header } from "./Header/header";

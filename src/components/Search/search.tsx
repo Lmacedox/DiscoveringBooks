@@ -1,8 +1,9 @@
 import { useFormik } from "formik";
 import React from "react";
-import { Wrapper } from "./search.style";
+import { Wrapper, Form, ButtonSearch } from "./search.style";
+import searchIcon from "../../assets/search-icon.png";
 
-export const Header: React.FC = () => {
+export const Search: React.FC = () => {
   const formik = useFormik({
     initialValues: {
       textsearch: "",
@@ -14,26 +15,28 @@ export const Header: React.FC = () => {
 
   return (
     <Wrapper>
-      <h3>Bem vindo ao Books</h3>
+      <h3>Bem vindos ao DiscoveringBooks</h3>
       <div>
         <p>
           Faça uma osca por nossa bibilhoteca, encontre e salve seus livros
           favoritos :)
         </p>
-        <form onSubmit={formik.handleSubmit}>
-          <input
-            id="textsearch"
-            name="textsearch"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.textsearch}
-            placeholder="Digite aqui sua busca"
-          />
-
-          <button type="submit">Submit</button>
-        </form>
-        <span>Ver meus favoritos</span>
       </div>
+      <Form onSubmit={formik.handleSubmit}>
+        <input
+          id="textsearch"
+          name="textsearch"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.textsearch}
+          placeholder="Digite aqui sua busca"
+        />
+
+        <ButtonSearch type="submit">
+          <img src={searchIcon} alt="Imagem de uma lupa" />
+        </ButtonSearch>
+      </Form>
+      <span>Ver meus favoritos</span>
     </Wrapper>
   );
 };
