@@ -1,28 +1,25 @@
-import { Layout } from "./components/Layout/layout";
-import { GlobalStyled } from "./globalStyle";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  // useEffect(() => {
-  //   // console.log(process.env.REACT_APP_MYKEYAPI);
-  //   axios
-  //     .get(
-  //       `https://www.googleapis.com/books/v1/volumes?q=maxResults=20&full&key=${process.env.REACT_APP_MYKEYAPI}`
-  //     )
-  //     .then((resp) => {
-  //       console.log("THEN");
-  //       console.log(resp.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log("Errr");
-  //       console.log(err);
-  //     });
-  // }, []);
-
   return (
-    <>
-      <GlobalStyled />
-      <Layout />
-    </>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
